@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="945.0" prefWidth="1420.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+   <children>
+      <AnchorPane fx:id="dashBoardPane" layoutX="366.0" prefHeight="945.0" prefWidth="1054.0" styleClass="dashBoard" stylesheets="@../DashBoardFormStyles.css">
+         <children>
+            <ImageView fitHeight="333.0" fitWidth="926.0" layoutX="94.0" layoutY="14.0" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="5.0">
+               <image>
+                  <Image url="@../asserts/picture.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="238.0" layoutY="478.0" prefHeight="84.0" prefWidth="531.0" text="Welcome  ">
+               <font>
+                  <Font name="SansSerif Regular" size="48.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#217267" />
+                        <Stop color="#37b5a4" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label alignment="CENTER" layoutX="199.0" layoutY="545.0" prefHeight="84.0" prefWidth="587.0" text="to Wholesale Distributors">
+               <font>
+                  <Font name="SansSerif Regular" size="48.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#217267" />
+                        <Stop color="#37b5a4" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label alignment="CENTER" layoutX="210.0" layoutY="629.0" prefHeight="75.0" prefWidth="587.0" text="Point of Sale...!">
+               <font>
+                  <Font name="SansSerif Regular" size="48.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#217267" />
+                        <Stop color="#37b5a4" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane prefHeight="945.0" prefWidth="366.0" styleClass="pane" stylesheets="@../DashBoardFormStyles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="btnManageItems" buttonType="RAISED" layoutX="29.0" layoutY="443.0" onAction="#manageItemsOnAction" prefHeight="59.0" prefWidth="315.0" style="-fx-background-radius: 2300;" styleClass="navPaneBtn" stylesheets="@../DashBoardFormStyles.css" text="Manage Items" textFill="#27865e">
+               <font>
+                  <Font name="Tahoma" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnSystemReports" buttonType="RAISED" layoutX="25.0" layoutY="633.0" onAction="#viewDashBoard" prefHeight="59.0" prefWidth="315.0" style="-fx-background-radius: 2300;" styleClass="navPaneBtn" stylesheets="@../DashBoardFormStyles.css" text="System Reports" textFill="#27865e">
+               <font>
+                  <Font name="Tahoma" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnMakeOrder" buttonType="RAISED" layoutX="27.0" layoutY="256.0" onAction="#openMakeOrderFormOnAction" prefHeight="59.0" prefWidth="315.0" style="-fx-background-radius: 2300;" styleClass="navPaneBtn" stylesheets="@../DashBoardFormStyles.css" text="Sales Point" textFill="#27865e">
+               <font>
+                  <Font name="Tahoma" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnManageOrders" buttonType="RAISED" layoutX="29.0" layoutY="353.0" onAction="#openManageOrderOnAction" prefHeight="59.0" prefWidth="315.0" style="-fx-background-radius: 2300;" styleClass="navPaneBtn" stylesheets="@../DashBoardFormStyles.css" text="Sales Management" textFill="#27865e">
+               <font>
+                  <Font name="Tahoma" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnSettings" buttonType="RAISED" layoutX="27.0" layoutY="541.0" onAction="#openCustomerFormOnAction" prefHeight="59.0" prefWidth="315.0" style="-fx-background-radius: 2300;" styleClass="navPaneBtn" stylesheets="@../DashBoardFormStyles.css" text="Customer Settings" textFill="#27865e">
+               <font>
+                  <Font name="Tahoma" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <AnchorPane layoutX="-1.0" layoutY="-2.0" prefHeight="117.0" prefWidth="366.0" style="-fx-background-color: #88888825; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="37.0" layoutX="47.0" layoutY="39.0">
+                     <image>
+                        <Image url="@../asserts/icons8_user_50px_2.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblUserName" layoutX="91.0" layoutY="47.0" prefHeight="17.0" prefWidth="65.0" textFill="#424d41">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblStatus" layoutX="232.0" layoutY="47.0" prefHeight="19.0" prefWidth="87.0" textFill="#476144">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="163.0" layoutY="47.0" prefHeight="21.0" prefWidth="19.0" text="-">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="169.0" onAction="#viewHomeOnAction" prefHeight="59.0" prefWidth="315.0" style="-fx-background-radius: 2300;" styleClass="navPaneBtn" stylesheets="@../DashBoardFormStyles.css" text="Home" textFill="#27865e">
+               <font>
+                  <Font name="Tahoma" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView layoutX="74.0" layoutY="186.0">
+               <image>
+                  <Image url="@../asserts/icons8_home_26px_6.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="74.0" layoutY="273.0">
+               <image>
+                  <Image url="@../asserts/icons8_coins_26px_1.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="61.0" layoutY="370.0">
+               <image>
+                  <Image url="@../asserts/icons8_coins_26px_1.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="74.0" layoutY="383.0">
+               <image>
+                  <Image url="@../asserts/icons8_settings_26px_4.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="75.0" layoutY="461.0">
+               <image>
+                  <Image url="@../asserts/icons8_product_24px.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="74.0" layoutY="558.0">
+               <image>
+                  <Image url="@../asserts/icons8_user_account_26px.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="74.0" layoutY="650.0">
+               <image>
+                  <Image url="@../asserts/icons8_combo_chart_26px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

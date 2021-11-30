@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="907.0" prefWidth="1029.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
+   <children>
+      <ImageView fitHeight="333.0" fitWidth="926.0" layoutX="104.0" layoutY="24.0">
+         <image>
+            <Image url="@../asserts/picture.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="248.0" layoutY="488.0" prefHeight="84.0" prefWidth="531.0" text="Welcome  ">
+         <font>
+            <Font name="SansSerif Regular" size="48.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#217267" />
+                  <Stop color="#37b5a4" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label alignment="CENTER" layoutX="209.0" layoutY="555.0" prefHeight="84.0" prefWidth="587.0" text="to Wholesale Distributors">
+         <font>
+            <Font name="SansSerif Regular" size="48.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#217267" />
+                  <Stop color="#37b5a4" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label alignment="CENTER" layoutX="220.0" layoutY="639.0" prefHeight="75.0" prefWidth="587.0" text="Point of Sale...!">
+         <font>
+            <Font name="SansSerif Regular" size="48.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#217267" />
+                  <Stop color="#37b5a4" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+   </children>
+</AnchorPane>

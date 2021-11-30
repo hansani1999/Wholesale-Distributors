@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="945.0" prefWidth="1054.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardFormController">
+   <children>
+      <Label alignment="CENTER" layoutX="400.0" layoutY="42.0" prefHeight="43.0" prefWidth="295.0" text="Dashboard" textFill="#383c3b">
+         <font>
+            <Font name="Comic Sans MS Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="34.0" layoutY="109.0" prefHeight="0.0" prefWidth="1024.0" />
+      <AnchorPane layoutX="34.0" layoutY="141.0" prefHeight="144.0" prefWidth="226.0" style="-fx-background-color: #9b59b6#9b59b6;">
+         <children>
+            <Label fx:id="lblTodayIncome" alignment="CENTER" layoutX="14.0" layoutY="64.0" prefHeight="43.0" prefWidth="198.0" text="Rs. 10000" textFill="#0d0d0d">
+               <font>
+                  <Font name="Comic Sans MS" size="21.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="8.0" prefHeight="43.0" prefWidth="198.0" text="Today's  Income" textFill="#0d0d0d">
+               <font>
+                  <Font name="Comic Sans MS" size="21.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="286.0" layoutY="141.0" prefHeight="144.0" prefWidth="220.0" style="-fx-background-color: #f1c40f;">
+         <children>
+            <Label fx:id="lblCustomerCount" alignment="CENTER" layoutX="14.0" layoutY="72.0" prefHeight="43.0" prefWidth="198.0" text="25" textFill="#252222">
+               <font>
+                  <Font name="Comic Sans MS" size="21.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="198.0" text="Visited Customers">
+               <font>
+                  <Font name="Comic Sans MS" size="21.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="490.0" layoutY="364.0" prefHeight="256.0" prefWidth="552.0" />
+      <AnchorPane layoutX="529.0" layoutY="141.0" prefHeight="144.0" prefWidth="226.0" style="-fx-background-color: #e74c3c;">
+         <children>
+            <Label fx:id="lblTotalIncome" alignment="CENTER" layoutX="14.0" layoutY="65.0" prefHeight="43.0" prefWidth="198.0" text="Rs.25000">
+               <font>
+                  <Font name="Comic Sans MS" size="21.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="198.0" text="Total Income">
+               <font>
+                  <Font name="Comic Sans MS" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pieChartPane" layoutX="34.0" layoutY="419.0" prefHeight="491.0" prefWidth="456.0" />
+      <Label alignment="CENTER" layoutX="147.0" layoutY="376.0" prefHeight="43.0" prefWidth="226.0" text=" Item mobility">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="490.0" layoutY="667.0" prefHeight="256.0" prefWidth="552.0" />
+      <Label alignment="CENTER" layoutX="627.0" layoutY="621.0" prefHeight="43.0" prefWidth="274.0" text="Monthly Income">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="629.0" layoutY="321.0" prefHeight="43.0" prefWidth="274.0" text="Customer wise income">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

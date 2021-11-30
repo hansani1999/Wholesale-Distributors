@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="945.0" prefWidth="1054.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MakeOrderFormController">
+   <children>
+      <Label alignment="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="43.0" prefWidth="295.0" text="Place Order Form" textFill="#2dcd92">
+         <font>
+            <Font name="Comic Sans MS Bold" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="17.0" layoutY="129.0" prefHeight="733.0" prefWidth="1021.0" style="-fx-background-color: #88888825; -fx-background-radius: 18;">
+         <children>
+            <Label layoutX="31.0" layoutY="281.0" prefHeight="33.0" prefWidth="112.0" text="Item List" textFill="#2a724e">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblCart" layoutX="13.0" layoutY="319.0" prefHeight="303.0" prefWidth="989.0">
+              <columns>
+                <TableColumn fx:id="colItemCode" prefWidth="145.0" text="Item code" />
+                  <TableColumn fx:id="colDescription" prefWidth="276.0" text="Description" />
+                  <TableColumn fx:id="colQTY" prefWidth="150.0" text="QTY" />
+                  <TableColumn fx:id="colUnitPrice" prefWidth="173.0" text="Unit Price" />
+                  <TableColumn fx:id="colTotal" prefWidth="244.0" text="Total" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="443.0" layoutY="647.0" prefHeight="33.0" prefWidth="152.0" text="Net  Payment " textFill="#ab440d">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTotal" layoutX="43.0" layoutY="678.0" prefHeight="33.0" prefWidth="89.0" text="00.00" textFill="#168fab">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="154.0" layoutY="678.0" prefHeight="33.0" prefWidth="31.0" text="-" textFill="#ab440d">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDiscount" layoutX="244.0" layoutY="678.0" prefHeight="33.0" prefWidth="89.0" text="00. 00" textFill="#168fab">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="370.0" layoutY="678.0" prefHeight="33.0" prefWidth="31.0" text="=" textFill="#ab440d">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="430.0" layoutY="673.0" prefHeight="43.0" prefWidth="178.0" style="-fx-background-color: #f8c291; -fx-background-radius: 10;">
+               <children>
+                  <Label fx:id="lblNetPayment" layoutX="56.0" layoutY="9.0" prefHeight="33.0" prefWidth="112.0" text="00.00" textFill="#ab440d">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="9.0" prefHeight="33.0" prefWidth="51.0" text="LKR." textFill="#ab440d">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label alignment="CENTER" layoutX="19.0" layoutY="652.0" prefHeight="22.0" prefWidth="83.0" text="Total" textFill="#726565">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="227.0" layoutY="652.0" prefHeight="22.0" prefWidth="104.0" text="Tot.discount" textFill="#655e5e">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbItemCode" layoutX="32.0" layoutY="180.0" prefHeight="31.0" prefWidth="178.0" promptText="Select Item code" style="-fx-background-color: #0be881;" styleClass="combo" stylesheets="@../DashBoardFormStyles.css">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
+            <JFXButton buttonType="RAISED" layoutX="823.0" layoutY="239.0" onAction="#addToCartOnAction" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: #0be881;" text="Add to cart" textFill="#5e5454">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="38.0" layoutY="147.0" prefHeight="33.0" prefWidth="131.0" text="Item Details" textFill="#2a724e">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbCustomerId" layoutX="32.0" layoutY="45.0" prefHeight="31.0" prefWidth="178.0" promptText="Select ID" style="-fx-background-color: #0be881;" styleClass="combo" stylesheets="@../DashBoardFormStyles.css">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
+            <Label layoutX="32.0" layoutY="7.0" prefHeight="33.0" prefWidth="143.0" text="Customer Info" textFill="#2a724e">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="961.0" layoutY="12.0" onAction="#addNewCustomerOnAction" prefHeight="43.0" prefWidth="44.0" style="-fx-background-color: #0be881; -fx-background-radius: 1000;" text=" ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <ImageView fitHeight="22.0" fitWidth="21.0" layoutX="973.0" layoutY="23.0">
+               <image>
+                  <Image url="@../asserts/icons8_add_user_male_50px.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="11.0" layoutY="146.0" prefHeight="3.0" prefWidth="989.0" />
+            <Separator layoutX="19.0" layoutY="281.0" prefHeight="3.0" prefWidth="983.0" />
+            <Separator layoutX="10.0" layoutY="638.0" prefHeight="3.0" prefWidth="989.0" />
+            <JFXButton buttonType="RAISED" layoutX="683.0" layoutY="239.0" onAction="#clearOnAction" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: #82ccdd;" text="Clear" textFill="#5e5454">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXTextField fx:id="txtTitle" labelFloat="true" layoutX="227.0" layoutY="45.0" prefHeight="32.0" prefWidth="69.0" promptText="Title :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtName" labelFloat="true" layoutX="300.0" layoutY="45.0" prefHeight="32.0" prefWidth="219.0" promptText="Customer Name :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="544.0" layoutY="45.0" prefHeight="32.0" prefWidth="401.0" promptText="Address :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtCity" labelFloat="true" layoutX="229.0" layoutY="100.0" prefHeight="32.0" prefWidth="207.0" promptText="City :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtProvince" labelFloat="true" layoutX="497.0" layoutY="100.0" prefHeight="32.0" prefWidth="178.0" promptText="Province :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtPostalCode" labelFloat="true" layoutX="752.0" layoutY="100.0" prefHeight="32.0" prefWidth="198.0" promptText="Postal Code :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="230.0" layoutY="180.0" prefHeight="32.0" prefWidth="359.0" promptText="Description :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtPackSize" labelFloat="true" layoutX="619.0" layoutY="180.0" prefHeight="32.0" prefWidth="162.0" promptText="Pack Size :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="797.0" layoutY="180.0" prefHeight="32.0" prefWidth="143.0" promptText="QTY on Hand :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtUnitPrice" labelFloat="true" layoutX="232.0" layoutY="239.0" prefHeight="32.0" prefWidth="169.0" promptText="Unit Price :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="424.0" layoutY="239.0" prefHeight="32.0" prefWidth="162.0" promptText="QTY :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <Label alignment="TOP_RIGHT" layoutX="740.0" layoutY="652.0" prefHeight="22.0" prefWidth="83.0" text="Cash :" textFill="#726565">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="740.0" layoutY="695.0" prefHeight="22.0" prefWidth="83.0" text="Balance :" textFill="#726565">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="680.0" layoutY="646.0" orientation="VERTICAL" prefHeight="76.0" prefWidth="5.0" />
+            <TextField fx:id="txtCash" layoutX="832.0" layoutY="648.0" onAction="#calculateBalanceOnAction" prefHeight="31.0" prefWidth="169.0" promptText="Enter Cash" />
+            <Label fx:id="lblBalance" layoutX="840.0" layoutY="690.0" prefHeight="33.0" prefWidth="89.0" text="00.00" textFill="#168fab">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btnConfirmOrder" buttonType="RAISED" layoutX="830.0" layoutY="880.0" onAction="#confirmOrderOnAction" prefHeight="43.0" prefWidth="207.0" style="-fx-background-color: #0be881; -fx-background-radius: 30;" text="Confirm Order" textFill="#5e5454">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="880.0" onAction="#cancelOnAction" prefHeight="43.0" prefWidth="185.0" style="-fx-background-color: #82ccdd; -fx-background-radius: 30;" text="Cancel" textFill="#5e5454">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="80.0" layoutY="78.0" prefHeight="33.0" prefWidth="104.0" text="Order Id : " textFill="#496155">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId" layoutX="184.0" layoutY="78.0" prefHeight="33.0" prefWidth="104.0" text="O-001" textFill="#43544b">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="305.0" layoutY="78.0" prefHeight="33.0" prefWidth="131.0" text="Order Date : " textFill="#43544b">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel" layoutX="436.0" layoutY="78.0" prefHeight="33.0" prefWidth="122.0" text="18. 08. 2021" textFill="#43544b">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="584.0" layoutY="78.0" prefHeight="33.0" prefWidth="104.0" text="     Time :" textFill="#43544b">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="digitalClock" layoutX="699.0" layoutY="78.0" prefHeight="33.0" prefWidth="131.0" text="11 : 24 : 00 am" textFill="#43544b">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblUserName" alignment="CENTER_RIGHT" layoutX="934.0" layoutY="78.0" prefHeight="33.0" prefWidth="83.0" textFill="#43544b">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="851.0" layoutY="78.0" prefHeight="33.0" prefWidth="83.0" text="User :" textFill="#43544b">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

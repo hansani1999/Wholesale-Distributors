@@ -1,0 +1,35 @@
+.pane {
+    -fx-background-color: linear-gradient(to bottom right,#4ca2cd,#67B26F);
+    -fx-background-radius: 0 18 18 0;
+}
+
+.loginPane {
+    -fx-background-color: linear-gradient(to bottom right, #67B26F,#4ca2cd);
+}
+
+.userNameTxt {
+    -fx-prompt-text-fill: #b3d0ca;
+    -fx-text-fill: grey;
+    -fx-font-size: 18;
+}
+
+.errorStyle {
+    -fx-text-fill: red;
+}
+
+.fxText {
+    /*-fx-prompt-text-fill: red;
+    -jfx-unfocus-color: red;*/
+}
+
+.navPaneBtn {
+    -fx-background-color:  #9AECDB;
+}
+
+.navPaneBtn:hover {
+    -fx-background-color:  #2f3640;
+}
+
+.combo {
+    -fx-font-family: "Comic Sans MS";
+}

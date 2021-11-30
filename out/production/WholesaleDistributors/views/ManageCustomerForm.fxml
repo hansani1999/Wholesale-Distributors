@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="945.0" prefWidth="1054.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageCustomerFormController">
+   <children>
+      <Label alignment="CENTER" layoutX="390.0" layoutY="32.0" prefHeight="43.0" prefWidth="295.0" text="Manage Customer" textFill="#2dcd92">
+         <font>
+            <Font name="Comic Sans MS Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="24.0" layoutY="99.0" prefHeight="0.0" prefWidth="1024.0" />
+      <AnchorPane layoutX="37.0" layoutY="118.0" prefHeight="390.0" prefWidth="1001.0" style="-fx-background-color: #88888825; -fx-background-radius: 20;">
+         <children>
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="1001.0" style="-fx-background-color: #4b4b4b; -fx-background-radius: 20 20 0 0;" text="Customer Details" textFill="#e6e8e7">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtId" focusColor="#2a724e" labelFloat="true" layoutX="78.0" layoutY="100.0" prefHeight="32.0" prefWidth="247.0" promptText="Customer Id :" styleClass="fxText" stylesheets="@../DashBoardFormStyles.css" unFocusColor="#404643">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtAddress" focusColor="#2a724e" labelFloat="true" layoutX="78.0" layoutY="185.0" prefHeight="32.0" prefWidth="686.0" promptText="Address :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtCity" focusColor="#2a724e" labelFloat="true" layoutX="78.0" layoutY="273.0" promptText="City :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtProvince" focusColor="#2a724e" labelFloat="true" layoutX="327.0" layoutY="273.0" promptText="Province :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtPostalCode" focusColor="#2a724e" labelFloat="true" layoutX="576.0" layoutY="273.0" promptText="Postal Code :">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="836.0" layoutY="196.0" onAction="#clearFormOnAction" prefHeight="43.0" prefWidth="118.0" style="-fx-background-color: #58B19F;" text="Clear">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="836.0" layoutY="133.0" onAction="#addCustomerOnAction" prefHeight="43.0" prefWidth="118.0" style="-fx-background-color: #55E6C1;" text="Add">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="836.0" layoutY="133.0" onAction="#updateCustomerOnAction" prefHeight="43.0" prefWidth="118.0" style="-fx-background-color: #1dd1a1;" text="Update">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="836.0" layoutY="252.0" onAction="#deleteCustomerOnAction" prefHeight="43.0" prefWidth="118.0" style="-fx-background-color: #ff6b6b;" text="Delete">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXTextField fx:id="txtCustomerName" focusColor="#2a724e" labelFloat="true" layoutX="501.0" layoutY="100.0" prefHeight="32.0" prefWidth="271.0" promptText="Customer Name :" styleClass="fxText" stylesheets="@../DashBoardFormStyles.css" unFocusColor="#404643">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXComboBox fx:id="titleCombo" focusColor="#2a724e" layoutX="388.0" layoutY="100.0" prefHeight="32.0" prefWidth="95.0" promptText="Title" styleClass="combo" stylesheets="@../DashBoardFormStyles.css" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblCustomer" layoutX="41.0" layoutY="561.0" prefHeight="343.0" prefWidth="977.0">
+        <columns>
+          <TableColumn fx:id="colCustomerId" prefWidth="118.0" text="Customer Id" />
+          <TableColumn fx:id="colTitle" minWidth="3.0" prefWidth="74.0" text="Title" />
+            <TableColumn fx:id="colName" minWidth="3.0" prefWidth="189.0" text="Name" />
+            <TableColumn fx:id="colAddress" minWidth="3.0" prefWidth="205.0" text="Address" />
+            <TableColumn fx:id="colCity" minWidth="3.0" prefWidth="127.0" text="City" />
+            <TableColumn fx:id="colProvince" minWidth="3.0" prefWidth="142.0" text="Province" />
+            <TableColumn fx:id="colPostalCode" minWidth="3.0" prefWidth="120.0" text="Posatal Code" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

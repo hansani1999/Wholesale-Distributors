@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginPane" prefHeight="761.0" prefWidth="738.0" styleClass="loginPane" stylesheets="@../DashBoardFormStyles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <AnchorPane fx:id="loginFormContext" layoutX="69.0" layoutY="36.0" prefHeight="671.0" prefWidth="600.0" style="-fx-background-color: #485460; -fx-background-radius: 20;" styleClass="loginPane2" stylesheets="@../DashBoardFormStyles.css">
+         <children>
+            <Label alignment="CENTER" layoutX="178.0" layoutY="56.0" prefHeight="48.0" prefWidth="244.0" text="Login" textFill="#539083f5">
+               <font>
+                  <Font name="Comic Sans MS" size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="85.0" layoutY="243.0" prefHeight="42.0" prefWidth="138.0" text="User Name" textFill="#b3d0ca">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorLbl" alignment="CENTER" layoutX="56.0" layoutY="413.0" prefHeight="32.0" prefWidth="461.0" styleClass="errorStyle" stylesheets="@../DashBoardFormStyles.css">
+               <font>
+                  <Font name="Comic Sans MS" size="16.0" />
+               </font></Label>
+            <Label layoutX="97.0" layoutY="336.0" prefHeight="42.0" prefWidth="113.0" text="Password" textFill="#b3d0ca">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+            <ImageView layoutX="58.0" layoutY="252.0">
+               <image>
+                  <Image url="@../asserts/icons8_user_24px.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="58.0" layoutY="345.0">
+               <image>
+                  <Image url="@../asserts/icons8_lock_24px.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtUserName" layoutX="236.0" layoutY="248.0" prefHeight="30.0" prefWidth="273.0" promptText="Enter User Name">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font></TextField>
+            <PasswordField fx:id="txtPassword" layoutX="236.0" layoutY="342.0" prefHeight="31.0" prefWidth="273.0" promptText="Enter Password">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font></PasswordField>
+            <JFXButton buttonType="RAISED" layoutX="128.0" layoutY="486.0" onAction="#loginOnAction" prefHeight="56.0" prefWidth="345.0" style="-fx-background-color: #b3d0ca; -fx-background-radius: 30;" text="Login">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView layoutX="178.0" layoutY="502.0">
+               <image>
+                  <Image url="@../asserts/icons8_key_24px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

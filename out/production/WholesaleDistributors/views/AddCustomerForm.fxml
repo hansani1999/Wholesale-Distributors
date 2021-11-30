@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="616.0" prefWidth="606.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomerFormController">
+   <children>
+      <Label layoutX="186.0" layoutY="29.0" prefHeight="51.0" prefWidth="228.0" text="Customer Details" textFill="#4ca2cd">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="79.0" prefHeight="1.0" prefWidth="577.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="119.0" prefHeight="30.0" prefWidth="122.0" text="Customer ID :">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="175.0" layoutY="119.0" prefHeight="30.0" prefWidth="350.0" promptText="Enter ID" />
+      <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="238.0" prefHeight="30.0" prefWidth="122.0" text="Customer Name :">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="302.0" prefHeight="30.0" prefWidth="122.0" text="Address : ">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_RIGHT" layoutX="27.0" layoutY="178.0" prefHeight="30.0" prefWidth="122.0" text="Title : ">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="364.0" prefHeight="30.0" prefWidth="122.0" text="City : ">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="416.0" prefHeight="30.0" prefWidth="122.0" text="Province : ">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="468.0" prefHeight="30.0" prefWidth="122.0" text="Postal Code :">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="175.0" layoutY="238.0" prefHeight="30.0" prefWidth="350.0" promptText="Enter Name" />
+      <TextField fx:id="txtAddress" layoutX="175.0" layoutY="302.0" prefHeight="30.0" prefWidth="350.0" promptText="Enter Address" />
+      <TextField fx:id="txtCity" layoutX="175.0" layoutY="364.0" prefHeight="30.0" prefWidth="350.0" promptText="Enter City" />
+      <TextField fx:id="txtProvince" layoutX="175.0" layoutY="416.0" prefHeight="30.0" prefWidth="350.0" promptText="Enter Province" />
+      <TextField fx:id="txtCode" layoutX="175.0" layoutY="468.0" prefHeight="30.0" prefWidth="350.0" promptText="Enter postal code" />
+      <TextField fx:id="txtTitle" layoutX="175.0" layoutY="178.0" prefHeight="30.0" prefWidth="350.0" promptText="Enter title" />
+      <JFXButton buttonType="RAISED" layoutX="344.0" layoutY="540.0" onAction="#addCustomerOnAction" prefHeight="43.0" prefWidth="176.0" style="-fx-background-color: #4ca2cd; -fx-background-radius: 30;" text="Add ">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <ImageView layoutX="133.0" layoutY="39.0">
+         <image>
+            <Image url="@../asserts/icons8_user_32px_3.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
