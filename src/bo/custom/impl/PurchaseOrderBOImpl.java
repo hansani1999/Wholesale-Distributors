@@ -98,7 +98,7 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
 
             ArrayList<ItemDetails> items = dto.getItems();
             for (ItemDetails details : items) {
-                OrderDetail detail = new OrderDetail(dto.getOrderId(),details.getItemCode(),details.getQtyForSell(),details.getUnitPrice());
+               /* OrderDetail detail = new OrderDetail(dto.getOrderId(),details.getItemCode(),details.getQtyForSell(),details.getUnitPrice());
                 boolean isSavedDetail = orderDetailDAO.save(detail);
 
                 if (!isSavedDetail) {
@@ -114,7 +114,7 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
                     con.rollback();
                     con.setAutoCommit(true);
                     return false;
-                }
+                }*/
             }
 
             con.commit();

@@ -80,7 +80,9 @@ public class ManageOrderBOImpl implements ManageOrderBO {
     @Override
     public OrderDetailDTO searchOrderDetail(String oId, String itemCode) throws SQLException {
         OrderDetail orderDetail = orderDetailDAO.searchOrderDetail(oId,itemCode);
-        return new OrderDetailDTO(orderDetail.getOrderId(),orderDetail.getItemCode(),orderDetail.getOrderQty(),orderDetail.getPrice());
+        //return new OrderDetailDTO(orderDetail.getOrderId(),orderDetail.getItemCode(),orderDetail.getOrderQty(),orderDetail.getPrice());
+
+        return new OrderDetailDTO();
     }
 
     @Override
@@ -131,7 +133,7 @@ public class ManageOrderBOImpl implements ManageOrderBO {
     }
 
     public boolean updateOrderForEdit(OrderItemTm temp, Order order, int newQtyOnHand) {
-        Connection con = DbConnection.getInstance().getConnection();
+        /*Connection con = DbConnection.getInstance().getConnection();
         try {
             con.setAutoCommit(false);
             if (orderDAO.update(order)) {
@@ -164,7 +166,7 @@ public class ManageOrderBOImpl implements ManageOrderBO {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-        }
+        }*/
 
         return true;
 
@@ -174,9 +176,9 @@ public class ManageOrderBOImpl implements ManageOrderBO {
     @Override
     public ArrayList<OrderDetailDTO> getOrderDetails(String orderId) throws SQLException {
         ArrayList<OrderDetailDTO> details = new ArrayList<>();
-        for (OrderDetail detail : orderDetailDAO.getOrderDetails(orderId)) {
+        /*for (OrderDetail detail : orderDetailDAO.getOrderDetails(orderId)) {
             details.add(new OrderDetailDTO(detail.getOrderId(),detail.getItemCode(),detail.getOrderQty(),detail.getPrice()));
-        }
+        }*/
         return details;
     }
 

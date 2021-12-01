@@ -12,8 +12,13 @@ import javax.persistence.*;
 public class OrderDetail {
     //private OrderDetailId orderDetailId = new OrderDetailId();
     @Id
+    @GeneratedValue
     private String id;
+
+    @ManyToOne
     private Order order;
+
+    @ManyToOne
     private Item item;
     private int OrderQty;
     private double price;
@@ -23,14 +28,21 @@ public class OrderDetail {
     }
 
     public OrderDetail(String id, Order order, Item item, int orderQty, double price) {
-        this.id = id;
+        this.setId(id);
         this.setOrder(order);
         this.setItem(item);
         OrderQty = orderQty;
         this.price = price;
     }
 
-   /*@Transient
+    public OrderDetail(Order order, Item item, int orderQty, double price) {
+        this.order = order;
+        this.item = item;
+        OrderQty = orderQty;
+        this.price = price;
+    }
+
+    /*@Transient
     public Order getOrder(){
         return getOrderDetailId().getOrder();
     }
@@ -47,6 +59,14 @@ public class OrderDetail {
     public void setItem(Item item){
         getOrderDetailId().setItem(item);
     }*/
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public int getOrderQty() {
         return OrderQty;
@@ -81,6 +101,8 @@ public class OrderDetail {
     public void setItem(Item item) {
         this.item = item;
     }
+
+
 
    /* public OrderDetailId getOrderDetailId() {
         return orderDetailId;

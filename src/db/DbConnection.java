@@ -12,7 +12,7 @@ public class DbConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/Wholesale Distributors",
+                    "jdbc:mysql://localhost:3306/Wholesales",
                     "root",
                     "1234"
             );
