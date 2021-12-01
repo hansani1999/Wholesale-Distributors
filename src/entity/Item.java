@@ -2,6 +2,10 @@ package entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Item {
@@ -11,6 +15,9 @@ public class Item {
     private String packSize;
     private int qtyOnHand;
     private double unitPrice;
+
+    @OneToMany
+    private List<OrderDetail> list = new ArrayList<>();
 
     public Item() {
     }

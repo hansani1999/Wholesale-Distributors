@@ -1,9 +1,8 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Order {
@@ -17,6 +16,9 @@ public class Order {
 
     @ManyToOne
     private Customer customer;
+
+    @OneToMany
+    private List<OrderDetail> list = new ArrayList<>();
 
     public Order() {
     }
@@ -85,15 +87,12 @@ public class Order {
         this.discount = discount;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId='" + orderId + '\'' +
-                ", cId='" + cId + '\'' +
-                ", orderDate='" + orderDate + '\'' +
-                ", time='" + time + '\'' +
-                ", cost=" + cost +
-                ", discount=" + discount +
-                '}';
+
+    public List<OrderDetail> getList() {
+        return list;
+    }
+
+    public void setList(List<OrderDetail> list) {
+        this.list = list;
     }
 }
