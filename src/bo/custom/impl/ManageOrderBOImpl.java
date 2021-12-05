@@ -37,7 +37,8 @@ public class ManageOrderBOImpl implements ManageOrderBO {
     @Override
     public OrderDTO searchOrder(String oId) throws SQLException {
         Order order = orderDAO.search(oId);
-        return new OrderDTO(order.getOrderId(),order.getcId(),order.getOrderDate(),order.getTime(),order.getCost(),order.getDiscount());
+        /*return new OrderDTO(order.getOrderId(),order.getcId(),order.getOrderDate(),order.getTime(),order.getCost(),order.getDiscount());*/
+        return new OrderDTO();
     }
 
     @Override
@@ -67,11 +68,10 @@ public class ManageOrderBOImpl implements ManageOrderBO {
         for (Order order : orderDAO.getCustomerOrder(oId)) {
             customerOrders.add(new OrderDTO(
                     order.getOrderId(),
-                    order.getcId(),
                     order.getOrderDate(),
                     order.getTime(),
                     order.getCost(),
-                    order.getCost()
+                    order.getDiscount()
             ));
         }
         return customerOrders;
@@ -97,7 +97,7 @@ public class ManageOrderBOImpl implements ManageOrderBO {
 
         try {
             con.setAutoCommit(false);
-            Order order = new Order(orderEdit.getOrderId(),orderEdit.getCustomerId(),orderEdit.getOrderDate(),orderEdit.getTime(),orderEdit.getTotal(),orderEdit.getDiscount());
+            Order order = new Order(orderEdit.getOrderId(),orderEdit.getOrderDate(),orderEdit.getTime(),orderEdit.getTotal(),orderEdit.getDiscount());
             if(orderDAO.update(order)){
                 System.out.println("Order updated");
                 if (orderDetailDAO.deleteOrderDetail(orderEdit.getOrderId(),temp.getItemCode())) {

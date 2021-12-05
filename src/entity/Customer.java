@@ -18,7 +18,7 @@ public class Customer {
     private String province;
     private String postalCode;
 
-    @OneToMany
+    @OneToMany(mappedBy = "customer")
     private List<Order> orders = new ArrayList<>();
 
     public Customer() {

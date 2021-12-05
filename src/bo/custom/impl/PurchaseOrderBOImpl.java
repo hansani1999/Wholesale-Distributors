@@ -5,6 +5,7 @@ import dao.DAOFactory;
 import dao.custom.*;
 import dao.custom.impl.*;
 import db.DbConnection;
+import dto.CustomerDTO;
 import entity.Customer;
 import entity.Item;
 import entity.Order;
@@ -79,13 +80,13 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
     }
 
     @Override
-    public boolean placeOrder(OrderDTO dto) throws SQLException {
+    public boolean placeOrder(OrderDTO dto, String cId) throws SQLException {
             Order order = new Order(dto.getOrderId(),
-                    dto.getCustomerId(),
                     dto.getOrderDate(),
                     dto.getTime(),
                     dto.getTotal(),
-                    dto.getDiscount()
+                    dto.getDiscount(),
+                    new Customer()
             );
             Connection con = DbConnection.getInstance().getConnection();
             con.setAutoCommit(false);

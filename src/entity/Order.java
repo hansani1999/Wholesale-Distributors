@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "orders")
 public class Order {
     @Id
     private String orderId;
-    private String cId;
+    //private String cId;
     private String orderDate;
     private String time;
     private double cost;
@@ -17,7 +17,7 @@ public class Order {
     @ManyToOne
     private Customer customer;
 
-    @OneToMany
+    @OneToMany(mappedBy = "order")
     private List<OrderDetail> list = new ArrayList<>();
 
     public Order() {
@@ -29,15 +29,23 @@ public class Order {
         this.discount = discount;
     }
 
-    public Order(String orderId, String cId, String orderDate, String time, double cost, double discount) {
+   public Order(String orderId, String orderDate, String time, double cost, double discount) {
         this.setOrderId(orderId);
-        this.setcId(cId);
+        //*this.setcId(cId);*//*
         this.setOrderDate(orderDate);
         this.setTime(time);
         this.setCost(cost);
         this.setDiscount(discount);
     }
 
+    public Order(String orderId, String orderDate, String time, double cost, double discount, Customer customer) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.time = time;
+        this.cost = cost;
+        this.discount = discount;
+        this.customer = customer;
+    }
 
     public String getOrderId() {
         return orderId;
@@ -47,13 +55,13 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public String getcId() {
+    /*public String getcId() {
         return cId;
     }
 
     public void setcId(String cId) {
         this.cId = cId;
-    }
+    }*/
 
     public String getOrderDate() {
         return orderDate;
@@ -94,5 +102,13 @@ public class Order {
 
     public void setList(List<OrderDetail> list) {
         this.list = list;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

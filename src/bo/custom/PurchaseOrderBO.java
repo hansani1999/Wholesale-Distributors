@@ -17,7 +17,9 @@ public interface PurchaseOrderBO extends SuperBO {
 
     CustomerDTO searchCustomer(String customerId) throws SQLException;
 
-    boolean placeOrder(OrderDTO order) throws SQLException;
+    /*boolean placeOrder(OrderDTO order) throws SQLException;*/
+
+    boolean placeOrder(OrderDTO dto, String cId) throws SQLException;
 
     String generateOrderId() throws SQLException;
 }

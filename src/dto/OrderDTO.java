@@ -33,11 +33,28 @@ public class OrderDTO {
         this.discount = discount;
     }
 
-    public OrderDTO(String orderId, Double total, Double discount) {
+    public OrderDTO(String orderId, String orderDate, String time, Double total, Double discount, ArrayList<ItemDetails> items) {
         this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.time = time;
+        this.total = total;
+        this.discount = discount;
+        this.items = items;
+    }
+
+    public OrderDTO(String orderId, String orderDate, String time, Double total, Double discount) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.time = time;
         this.total = total;
         this.discount = discount;
     }
+
+    /*public OrderDTO(String orderId, Double total, Double discount) {
+        this.orderId = orderId;
+        this.total = total;
+        this.discount = discount;
+    }*/
 
     public String getOrderId() {
         return orderId;

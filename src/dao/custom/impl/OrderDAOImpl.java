@@ -1,8 +1,13 @@
 package dao.custom.impl;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
 import dao.CrudUtil;
 import dao.custom.OrderDAO;
+import entity.Customer;
 import entity.Order;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import util.FactoryConfiguration;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +16,10 @@ import java.util.ArrayList;
 public class OrderDAOImpl implements OrderDAO {
     @Override
     public ArrayList<Order> getAll() throws SQLException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `Order`");
+        ArrayList<Order> orders = new ArrayList<>();
+
+
+        /*ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `Order`");
 
         ArrayList<Order> orders = new ArrayList<>();
         while (rst.next()) {
@@ -23,7 +31,7 @@ public class OrderDAOImpl implements OrderDAO {
                     rst.getDouble(5),
                     rst.getDouble(6)
             ));
-        }
+        }*/
         return orders;
     }
 
@@ -31,14 +39,15 @@ public class OrderDAOImpl implements OrderDAO {
     public Order search(String id) throws SQLException {
         ResultSet rst =  CrudUtil.executeQuery("SELECT * FROM `Order` WHERE orderId=?",id);
         if (rst.next()) {
-            return new Order(
+            /*return new Order(
                     rst.getString(1),
                     rst.getString(2),
                     rst.getString(3),
                     rst.getString(4),
                     rst.getDouble(5),
                     rst.getDouble(6)
-            );
+            );*/
+            return new Order();
         }else {
             return null;
         }
@@ -46,12 +55,30 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public boolean save(Order order) throws SQLException {
-        return CrudUtil.executeUpdate("INSERT  INTO `Order` VALUES (?,?,?,?,?,?)",order.getOrderId(),order.getcId(),order.getOrderDate(),order.getTime(),order.getCost(),order.getDiscount());
+        return false;
+    }
+
+    @Override
+    public boolean saveOrder(Order order, String cId) throws SQLException {
+        /*return CrudUtil.executeUpdate("INSERT  INTO `Order` VALUES (?,?,?,?,?,?)",order.getOrderId(),order.getcId(),order.getOrderDate(),order.getTime(),order.getCost(),order.getDiscount());*/
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Customer customer = session.get(Customer.class, "cId");
+
+        Order newOrder = new Order(order.getOrderId(),order.getOrderDate(),order.getTime(),order.getCost(),order.getDiscount(),customer);
+        session.save(newOrder);
+
+        transaction.commit();
+        session.close();
+
+        return true;
     }
 
     @Override
     public boolean update(Order order) throws SQLException {
-        return CrudUtil.executeUpdate("UPDATE `Order`SET cost=?, discount=? WHERE orderId=?",order.getCost(),order.getDiscount(),order.getOrderId());
+        /*return CrudUtil.executeUpdate("UPDATE `Order`SET cost=?, discount=? WHERE orderId=?",order.getCost(),order.getDiscount(),order.getOrderId());*/
+        return true;
     }
 
     @Override
@@ -63,7 +90,7 @@ public class OrderDAOImpl implements OrderDAO {
     public ArrayList<Order> getCustomerOrder(String cId) throws SQLException {
         ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `Order` WHERE cId=?", cId);
         ArrayList<Order> allOrdersOfCustomer = new ArrayList<>();
-        while (rst.next()) {
+        /*while (rst.next()) {
              allOrdersOfCustomer.add(new Order(
                     rst.getString(1),
                     rst.getString(2),
@@ -72,7 +99,7 @@ public class OrderDAOImpl implements OrderDAO {
                     rst.getDouble(5),
                     rst.getDouble(6)
             ));
-        }
+        }*/
         return allOrdersOfCustomer;
     }
 

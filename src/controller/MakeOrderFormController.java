@@ -294,7 +294,7 @@ public class MakeOrderFormController {
 
         OrderDTO dto = new OrderDTO(
                 lblOrderId.getText(),
-                cmbCustomerId.getValue(),
+                /*cmbCustomerId.getValue()*/
                 dateLabel.getText(),
                 digitalClock.getText(),
                 Double.parseDouble(lblNetPayment.getText()),
@@ -307,7 +307,7 @@ public class MakeOrderFormController {
             new Alert(Alert.AlertType.ERROR,"Invalid Cash Amount! Please check the entered cash amount").show();
             return;
         }else {
-            if (purchaseOrderBO.placeOrder(dto)) {
+            if (purchaseOrderBO.placeOrder(dto,cmbCustomerId.getValue())) {
                 new Alert(Alert.AlertType.CONFIRMATION,"Order Saved Successfully..").show();
                 viewBill();
                 //clearAll();
